@@ -39,7 +39,7 @@ def main():
     print(f"It took you {elapsed_time:.2f} seconds to complete the quiz.")
 
     f = open("quizLog.txt", "a")
-    f.write(f"Correct:{correct_answers},Time:{elapsed_time:.2f}")
+    f.write(f"\nCorrect:{correct_answers},Time:{elapsed_time:.2f}")
     f.close()
 
 if __name__ == "__main__":
