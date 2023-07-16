@@ -1,5 +1,7 @@
 import random
 import time
+import datetime 
+
 
 def generate_unique_pairs():
     pairs = [(i, j) for i in range(1, 13) for j in range(i, 13)]
@@ -35,11 +37,14 @@ def main():
     end_time = time.time()
     elapsed_time = end_time - start_time
     score = 100 * correct_answers/total_questions
+    ts = ct.timestamp()
+
+
     print(f"Quiz completed! You answered {correct_answers} out of {total_questions} questions correctly or {score:.2f}%.")
     print(f"It took you {elapsed_time:.2f} seconds to complete the quiz.")
 
     f = open("quizLog.txt", "a")
-    f.write(f"\nCorrect:{correct_answers},Time:{elapsed_time:.2f}")
+    f.write(f"\ntimestamp:{ts}Correct:{correct_answers},Time:{elapsed_time:.2f}")
     f.close()
 
 if __name__ == "__main__":
